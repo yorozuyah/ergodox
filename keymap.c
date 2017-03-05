@@ -7,6 +7,9 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
+#define JA_ENUN KC_RO    // \ and _ (EN mark and UNder score)
+#define JA_ENVL KC_JYEN  // \ and | (EN mark and Vertical Line)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
@@ -15,9 +18,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  | Down |           |  Up  |   Y  |   U  |   I  |   O  |   P  |   @    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   :    |
+ * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  | :=>ctr |
  * |--------+------+------+------+------+------| EISU |           | KANA |------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  |   \    |
+ * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | _=>sft |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | ~L1  | LAlt | LGui |   ^  | DEL  |                                       | Rsft |   |  |   [  |   ]  | ~L2  |
  *   `----------------------------------'                                       `----------------------------------'
@@ -44,8 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              KC_PSCR,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0, KC_MINS,        
              KC_UP,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_LBRC,
-                          KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,          KC_QUOT,
-             KC_KANA,    KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          KC_RO,
+                          KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,         CTL_T(JA_CLON),
+             KC_KANA,    KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          SFT_T(JA_ENUN),,
                                 KC_RSFT, KC_JYEN,KC_RBRC,KC_BSLS,          KC_FN2,
              KC_RGUI,        KC_LCTRL,
              KC_PGDN,
